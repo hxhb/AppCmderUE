@@ -1,0 +1,44 @@
+<root xmlns:android="http://schemas.android.com/apk/res/android">
+  <init>
+	<log text="MobileUtils init"/>
+  </init>
+
+  <proguardAdditions>
+	<insert>
+	</insert>
+  </proguardAdditions>
+
+  <resourceCopies>
+<!--	<copyDir src="$S(PluginDir)/ThirdParty/Android/Libs"-->
+<!--					dst="$S(BuildDir)" />-->
+  </resourceCopies>
+	
+  <gameActivityImportAdditions>
+	<insert>
+<!--	  import android.net.ConnectivityManager;-->
+<!--	  import android.net.NetworkInfo;-->
+<!--	  import com.google.android.gms.common.ConnectionResult;-->
+<!--	  import android.telephony.TelephonyManager;-->
+<!--	  import android.provider.Settings.Secure;-->
+<!--	  import android.net.wifi.WifiManager;-->
+<!--	  import java.security.MessageDigest;-->
+<!--	  import java.security.NoSuchAlgorithmException;-->
+	</insert>
+  </gameActivityImportAdditions>
+
+  <androidManifestUpdates>
+<!--	  <addPermission android:name="android.permission.READ_PHONE_STATE" />-->
+  </androidManifestUpdates>
+
+  <gameActivityClassAdditions>
+	<insert>
+        public native void nativeAppendCommand();
+	</insert>
+  </gameActivityClassAdditions>
+    
+  <gameActivityOnCreateAdditions>
+    <insert>
+      nativeAppendCommand();
+    </insert>
+  </gameActivityOnCreateAdditions>
+</root>
