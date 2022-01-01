@@ -32,6 +32,16 @@
 
   <gameActivityClassAdditions>
 	<insert>
+        public String AndroidThunkJava_GetExtraCmdline()
+        {
+            String cmd = "";
+            if (_extrasBundle != null)
+            {
+                cmd = _extrasBundle.getString("cmdline");
+            }
+            Log.debug("Using commandline from: " + cmd);
+            return cmd;
+        }
         public native void nativeAppendCommand();
 	</insert>
   </gameActivityClassAdditions>
