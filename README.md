@@ -3,7 +3,7 @@ This is an Unreal Engine plugin that can easily specify command-line parameters 
 Usage:
 
 ```bash
-adb shell am start -a android.intent.action.MAIN -n com.imzlp.gworld/com.epicgames.ue4.GameActivity --es cmdline -test123/-test456/-test789
+append_cmd.bat com.imzlp.gworld -test123/-test456/-test789
 ```
 
 Log:
