@@ -5,6 +5,8 @@
 #include "Android/AndroidJavaEnv.h"
 #include "Android/AndroidApplication.h"
 #include "Android/AndroidPlatformMisc.h"
+#include "Kismet/KismetStringLibrary.h"
+#include "Resources/Version.h"
 
 #include <android/asset_manager.h>
 #include <android/asset_manager_jni.h>
@@ -16,7 +18,6 @@
 #include <sys/system_properties.h>
 #include <jni.h>
 #include <android/sensor.h>
-#include "Kismet/KismetStringLibrary.h"
 
 // Name of the UE4 commandline append setprop
 static constexpr char UE4CommandLineSetprop[] = "debug.ue4.commandline";

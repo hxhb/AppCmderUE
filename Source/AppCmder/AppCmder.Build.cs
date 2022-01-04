@@ -53,6 +53,12 @@ public class AppCmder : ModuleRules
 		if(Target.Platform == UnrealTargetPlatform.Android)
 		{
 			PrivateDependencyModuleNames.AddRange(new string[] { "Launch" });
+			PublicIncludePaths.AddRange(
+				new string[]
+				{
+					Path.Combine(EngineDirectory, "Source/Runtime/Launch")
+				});
+			
 			AdditionalPropertiesForReceipt.Add(new ReceiptProperty("AndroidPlugin", Path.Combine(ModuleDirectory, "UPL/Android/AppCmder_UPL.xml")));
 		}
 	}
