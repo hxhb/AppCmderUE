@@ -1,9 +1,9 @@
 This is an Unreal Engine plugin that can easily specify command-line parameters for Android through adb.
 
-Usage:
+Usage: choose engine version bat script(\*_ue4.bat/\*ue5.bat).
 
 ```bash
-append_cmd.bat com.imzlp.gworld "-test123" "-test456" "-test789"
+append_cmd_ue4.bat com.imzlp.gworld "-test123" "-test456" "-test789"
 ```
 
 Log:
