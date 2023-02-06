@@ -12,7 +12,7 @@ FOR %%I IN (%*) do (
                 set CMD_LINE_ARGS=%%I
                 @REM echo %CMD_LINE_ARGS%
             ) else (
-                set CMD_LINE_ARGS=!CMD_LINE_ARGS!/%%I
+                set CMD_LINE_ARGS=!CMD_LINE_ARGS!/.,;/%%I
                 @REM echo %CMD_LINE_ARGS%
             )
         )

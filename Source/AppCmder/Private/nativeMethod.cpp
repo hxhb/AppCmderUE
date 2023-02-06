@@ -67,7 +67,7 @@ FString GetExtraCmdline()
 	}
 	if(!ExtraCmdline.IsEmpty())
 	{
-		TArray<FString> Sections = UKismetStringLibrary::ParseIntoArray(ExtraCmdline,TEXT("/"));
+		TArray<FString> Sections = UKismetStringLibrary::ParseIntoArray(ExtraCmdline,TEXT("/.,;/"));
 		ExtraCmdline.Empty();
 		for(const auto& Section: Sections)
 		{
