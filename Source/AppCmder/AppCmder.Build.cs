@@ -50,6 +50,10 @@ public class AppCmder : ModuleRules
 				// ... add any modules that your module loads dynamically here ...
 			}
 			);
+
+		BuildVersion Version;
+		BuildVersion.TryRead(BuildVersion.GetDefaultFileName(), out Version);
+
 		if(Target.Platform == UnrealTargetPlatform.Android)
 		{
 			PrivateDependencyModuleNames.AddRange(new string[] { "Launch" });
@@ -59,7 +63,7 @@ public class AppCmder : ModuleRules
 					Path.Combine(EngineDirectory, "Source/Runtime/Launch")
 				});
 			
-			AdditionalPropertiesForReceipt.Add(new ReceiptProperty("AndroidPlugin", Path.Combine(ModuleDirectory, "UPL/Android/AppCmder_UPL.xml")));
+			AdditionalPropertiesForReceipt.Add("AndroidPlugin", Path.Combine(ModuleDirectory, "UPL/Android/AppCmder_UPL.xml"));
 		}
 	}
 }

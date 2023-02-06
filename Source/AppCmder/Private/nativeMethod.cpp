@@ -18,6 +18,13 @@
 #include <sys/system_properties.h>
 #include <jni.h>
 #include <android/sensor.h>
+#include "Misc/EngineVersionComparison.h"
+
+#if !UE_VERSION_OLDER_THAN(5,0,0)
+	#define UNREAL_JNI_METHOD_NAME Java_com_epicgames_unreal
+#else
+	#define UNREAL_JNI_METHOD_NAME Java_com_epicgames_ue4
+#endif
 
 // Name of the UE4 commandline append setprop
 static constexpr char UE4CommandLineSetprop[] = "debug.ue4.commandline";
@@ -78,7 +85,7 @@ FString GetExtraCmdline()
 	return ExtraCmdline;
 }
 
-JNI_METHOD void Java_com_epicgames_ue4_GameActivity_nativeAppendCommand()
+JNI_METHOD void UNREAL_JNI_METHOD_NAME_GameActivity_nativeAppendCommand()
 {
 	FString ExtraCmdline = GetExtraCmdline();
 
