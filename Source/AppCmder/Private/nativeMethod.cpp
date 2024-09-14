@@ -21,9 +21,9 @@
 #include "Misc/EngineVersionComparison.h"
 
 #if !UE_VERSION_OLDER_THAN(5,0,0)
-	#define UNREAL_JNI_METHOD_NAME Java_com_epicgames_unreal
+	#define UNREAL_JNI_METHOD_NAME Java_com_epicgames_unreal_GameActivity_nativeAppendCommand
 #else
-	#define UNREAL_JNI_METHOD_NAME Java_com_epicgames_ue4
+	#define UNREAL_JNI_METHOD_NAME Java_com_epicgames_ue4_GameActivity_nativeAppendCommand
 #endif
 
 // Name of the UE4 commandline append setprop
@@ -85,7 +85,7 @@ FString GetExtraCmdline()
 	return ExtraCmdline;
 }
 
-JNI_METHOD void UNREAL_JNI_METHOD_NAME_GameActivity_nativeAppendCommand()
+JNI_METHOD void UNREAL_JNI_METHOD_NAME()
 {
 	FString ExtraCmdline = GetExtraCmdline();
 
