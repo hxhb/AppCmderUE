@@ -1,7 +1,9 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "AppCmder.h"
+#include "Engine/Engine.h"
 #include "Profiler/UnrealProfilerHelper.h"
+#include "Engine/Engine.h"
 #define LOCTEXT_NAMESPACE "FAppCmderModule"
 
 DEFINE_LOG_CATEGORY(LogAppCmder)
@@ -46,10 +48,13 @@ namespace NSAppCmder
 	void OnPostEngineInit()
 	{
 		TArray<FString> ExecCmds = NSAppCmder::GetExecCmds();
-		// for(const FString& ExecCmd:ExecCmds)
-		// {
-		// 	GEngine->Exec( GWorld, *ExecCmd, *GLog );
-		// }
+		FString Display = FString::Printf( TEXT("[NSAppCmder::OnPostEngineInit] AppExecCmds: %d\n"),ExecCmds.Num());
+		for(const FString& ExecCmd:ExecCmds)
+		{
+			Display += FString::Printf( TEXT("\t%s\n"), *ExecCmd);
+			GEngine->Exec( nullptr, *ExecCmd, *GLog );
+		}
+		UE_LOG(LogAppCmder,Display,TEXT("%s"),*Display);
 	}
 }
 
